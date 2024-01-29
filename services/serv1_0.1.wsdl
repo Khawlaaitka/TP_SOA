@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="serv1"
+		xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+		xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:tns="http://www.talend.org/service/"
+		targetNamespace="http://www.talend.org/service/">
+
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			targetNamespace="http://www.talend.org/service/">
+			<xsd:element name="serv1OperationRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="in" type="xsd:string"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="serv1OperationResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="out" type="xsd:string"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="getUserbyId"
+				type="tns:getUserByIdType">
+			</xsd:element>
+			<xsd:element name="getUserbyIdResponse"
+				type="tns:getUserByIdResponseType">
+			</xsd:element>
+			
+		
+            <xsd:complexType name="getUserByIdType">
+            	<xsd:sequence>
+            		<xsd:element name="id" type="xsd:int"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+		
+            <xsd:complexType name="getUserByIdResponseType">
+            	<xsd:sequence>
+            		<xsd:element name="users" type="tns:users"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+		
+		
+            <xsd:complexType name="users">
+            	<xsd:sequence>
+            		<xsd:element name="user" type="tns:user"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+		
+            <xsd:complexType name="user">
+            	<xsd:sequence>
+            		<xsd:element name="nom" type="xsd:string"></xsd:element>
+            		<xsd:element name="prenom" type="xsd:string"></xsd:element>
+            		<xsd:element name="login" type="xsd:string"></xsd:element>
+            		<xsd:element name="password" type="xsd:string"></xsd:element>
+            	</xsd:sequence>
+            	<xsd:attribute name="id" type="xsd:int"></xsd:attribute>
+            </xsd:complexType>
+		</xsd:schema>
+	</wsdl:types>
+
+	<wsdl:message name="serv1OperationRequest">
+		<wsdl:part name="parameters" element="tns:getUserbyId"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="serv1OperationResponse">
+		<wsdl:part name="parameters" element="tns:getUserbyIdResponse"></wsdl:part>
+	</wsdl:message>
+
+	<wsdl:portType name="serv1PortType">
+		<wsdl:operation name="serv1Operation">
+			<wsdl:input message="tns:serv1OperationRequest"></wsdl:input>
+			<wsdl:output message="tns:serv1OperationResponse"></wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<wsdl:binding name="serv1Binding" type="tns:serv1PortType">
+
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="serv1Operation">
+
+			<soap:operation
+				soapAction="http://www.talend.org/service/serv1Operation" />
+			<wsdl:input>
+
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+
+	<wsdl:service name="serv1">
+		<wsdl:port name="serv1Port" binding="tns:serv1Binding">
+			<soap:address location="http://localhost:8090/services/serv1" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

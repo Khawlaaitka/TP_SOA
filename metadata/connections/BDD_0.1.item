@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.relational="http:///orgomg/cwm/resource/relational.ecore" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
+  <TalendMetadata:DatabaseConnection xmi:id="_atlC4L63Ee67qLJIOTuwbA" name="BDD" id="_-O8fEL62Ee67qLJIOTuwbA" label="BDD" dataPackage="_awzWAL63Ee67qLJIOTuwbA" DatabaseType="PostgreSQL" DriverClass="org.postgresql.Driver" URL="jdbc:postgresql://localhost:5433/users?" dbVersionString="V9_X" Port="5433" Username="postgres" Password="enc:system.encryption.key.v1:moz7wJg4VmO2Y6flfYab+xMBZMVsQ56Q+rZIiR0UHRHYOA==" ServerName="localhost" DatasourceName="" FileFieldName="" SID="users" SqlSynthax="" StringQuote="" NullChar="" DbmsId="postgres_id" ProductId="POSTGRESQL" AdditionalParams="" StandardSQL="true" SQLMode="false" UiSchema="public">
+    <taggedValue xmi:id="_atlp8L63Ee67qLJIOTuwbA" tag="Is Conn Need Reload" value="false"/>
+    <taggedValue xmi:id="_at8PQL63Ee67qLJIOTuwbA" tag="package filter" value=""/>
+    <taggedValue xmi:id="_auBu0L63Ee67qLJIOTuwbA" tag="Status" value=""/>
+    <taggedValue xmi:id="_auBu0b63Ee67qLJIOTuwbA" tag="Version" value="0.1"/>
+    <taggedValue xmi:id="_auBu0r63Ee67qLJIOTuwbA" tag="Purpose" value=""/>
+    <taggedValue xmi:id="_auBu0763Ee67qLJIOTuwbA" tag="Description" value=""/>
+    <taggedValue xmi:id="_auBu1L63Ee67qLJIOTuwbA" tag="Author" value=""/>
+    <taggedValue xmi:id="_auBu1b63Ee67qLJIOTuwbA" tag="otherParameter"/>
+    <taggedValue xmi:id="_av5-IL63Ee67qLJIOTuwbA" tag="DB ProductName" value="PostgreSQL"/>
+    <taggedValue xmi:id="_av5-Ib63Ee67qLJIOTuwbA" tag="DB ProductVersion" value="16.1"/>
+    <taggedValue xmi:id="_av5-Ir63Ee67qLJIOTuwbA" tag="DB IdentifierQuoteString" value="&quot;"/>
+    <parameters xmi:id="_atmRAL63Ee67qLJIOTuwbA" key="CONN_PARA_KEY_USERNAME" value="postgres"/>
+  </TalendMetadata:DatabaseConnection>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_awzWAL63Ee67qLJIOTuwbA" name="users" dataManager="_atlC4L63Ee67qLJIOTuwbA">
+    <ownedElement xsi:type="orgomg.cwm.resource.relational:Schema" xmi:id="_awzWAb63Ee67qLJIOTuwbA" name="public">
+      <ownedElement xsi:type="relational:TdTable" xmi:id="_onVA8L63Ee67qLJIOTuwbA" name="user" id="_onQIcL63Ee67qLJIOTuwbA" label="user" tableType="TABLE">
+        <feature xsi:type="relational:TdColumn" xmi:id="_onVA8b63Ee67qLJIOTuwbA" name="id" label="id" length="10" sourceType="INT4" talendType="id_Integer" key="true" nullable="false">
+          <taggedValue xmi:id="_onVoAL63Ee67qLJIOTuwbA" tag="Comment" value=""/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_onVoAb63Ee67qLJIOTuwbA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_onVoAr63Ee67qLJIOTuwbA" name="INT4" numericPrecisionRadix="10" javaDataType="4"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_onVoA763Ee67qLJIOTuwbA" name="nom" label="nom" length="50" sourceType="VARCHAR" talendType="id_String" nullable="false">
+          <taggedValue xmi:id="_onVoBL63Ee67qLJIOTuwbA" tag="Comment" value=""/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_onVoBb63Ee67qLJIOTuwbA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_onVoBr63Ee67qLJIOTuwbA" name="VARCHAR" numericPrecisionRadix="10" javaDataType="12"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_onVoB763Ee67qLJIOTuwbA" name="prenom" label="prenom" length="50" sourceType="VARCHAR" talendType="id_String" nullable="false">
+          <taggedValue xmi:id="_onVoCL63Ee67qLJIOTuwbA" tag="Comment" value=""/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_onVoCb63Ee67qLJIOTuwbA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_onVoCr63Ee67qLJIOTuwbA" name="VARCHAR" numericPrecisionRadix="10" javaDataType="12"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_onVoC763Ee67qLJIOTuwbA" name="login" label="login" length="50" sourceType="VARCHAR" talendType="id_String" nullable="false">
+          <taggedValue xmi:id="_onVoDL63Ee67qLJIOTuwbA" tag="Comment" value=""/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_onVoDb63Ee67qLJIOTuwbA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_onVoDr63Ee67qLJIOTuwbA" name="VARCHAR" numericPrecisionRadix="10" javaDataType="12"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_onVoD763Ee67qLJIOTuwbA" name="password" label="password" length="50" sourceType="VARCHAR" talendType="id_String" nullable="false">
+          <taggedValue xmi:id="_onVoEL63Ee67qLJIOTuwbA" tag="Comment" value=""/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_onVoEb63Ee67qLJIOTuwbA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_onVoEr63Ee67qLJIOTuwbA" name="VARCHAR" numericPrecisionRadix="10" javaDataType="12"/>
+        </feature>
+      </ownedElement>
+    </ownedElement>
+  </orgomg.cwm.resource.relational:Catalog>
+</xmi:XMI>
